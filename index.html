@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>诚挚邀请 · 知春晚</title>
+  <!-- Google Fonts: 思源宋体 + 霞鹜文楷 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <!-- Animate.css 轻量动画 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>
+    :root {
+      --ink: #2c2416;
+      --paper: #faf8f5;
+      --accent: #8b4513;
+      --gold: #c9a227;
+      --red-seal: #b22222;
+      --border: #d4c4a8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5efe6 0%, #e8dfd4 50%, #f0e9e0 100%);
+      font-family: "Noto Serif SC", "Source Han Serif SC", serif;
+      color: var(--ink);
+      padding: 2rem 1rem;
+      line-height: 1.9;
+    }
+
+    .invitation-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .invitation-card {
+      background: var(--paper);
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      box-shadow: 
+        0 4px 6px rgba(0,0,0,0.04),
+        0 20px 40px rgba(139, 69, 19, 0.08),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .invitation-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--accent), var(--gold), transparent);
+      opacity: 0.6;
+    }
+
+    .invitation-card::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--accent), var(--gold), transparent);
+      opacity: 0.6;
+    }
+
+    .title-block {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .title-block .main-title {
+      font-family: "ZCOOL XiaoWei", "Noto Serif SC", serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.4em;
+      margin-bottom: 0.5rem;
+    }
+
+    .title-block .sub-title {
+      font-size: 0.95rem;
+      color: #6b5b4f;
+      letter-spacing: 0.2em;
+    }
+
+    .greeting {
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .content p {
+      margin-bottom: 1rem;
+      text-indent: 2em;
+      font-size: 1rem;
+    }
+
+    .content p:last-of-type {
+      margin-bottom: 1.5rem;
+    }
+
+    .event-box {
+      background: linear-gradient(to bottom, rgba(201, 162, 39, 0.08), rgba(212, 196, 168, 0.12));
+      border-left: 4px solid var(--gold);
+      padding: 1.2rem 1.5rem;
+      margin: 1.2rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .event-box .event-name {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .event-box .event-detail {
+      font-size: 0.95rem;
+      color: #4a4035;
+      line-height: 1.7;
+    }
+
+    .event-box .event-detail strong {
+      color: var(--ink);
+    }
+
+    .closing {
+      text-align: right;
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+
+    .signature {
+      font-family: "ZCOOL XiaoWei", "Noto Serif SC", serif;
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .seal {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--red-seal);
+      border-radius: 50%;
+      color: var(--red-seal);
+      font-size: 0.75rem;
+      line-height: 46px;
+      text-align: center;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      font-weight: 600;
+    }
+
+    .animate-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+
+    @media (max-width: 600px) {
+      .invitation-card {
+        padding: 2rem 1.5rem;
+      }
+      .title-block .main-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.2em;
+      }
+      .content p {
+        text-indent: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="invitation-wrapper">
+    <article class="invitation-card animate__animated animate__fadeIn">
+      <header class="title-block animate-in delay-1">
+        <h1 class="main-title">诚挚邀请</h1>
+        <p class="sub-title">INVITATION</p>
+      </header>
+
+      <div class="content">
+        <p class="greeting animate-in delay-1">尊敬的蒋峥志老师：</p>
+        <p class="animate-in delay-2">您好，我是您的学生赵天翼，恭喜正则蒋工通过我的考验！</p>
+        <p class="animate-in delay-2">我在这里代表我们知春全体首届预备研究员，诚挚地邀请您参加我们首届「知春晚」，地点为图灵大教室，时间为 2026 年 2 月 5 日晚 19 点到 21 点。</p>
+
+        <div class="event-box animate-in delay-3">
+          <div class="event-name">知春晚</div>
+          <div class="event-detail">
+            <strong>地点：</strong>图灵大教室<br>
+            <strong>时间：</strong>2026 年 2 月 5 日 19:00–21:00
+          </div>
+        </div>
+
+        <div class="event-box animate-in delay-3">
+          <div class="event-name">晚宴</div>
+          <div class="event-detail">
+            <strong>地点：</strong>图灵大教室<br>
+            <strong>时间：</strong>2026 年 2 月 5 日 17:00–18:30
+          </div>
+        </div>
+
+        <p class="animate-in delay-3">此外，我们还诚挚地邀请您参加我们为导师精心准备的「知春密室大逃杀」活动，在这里，您可以沉浸式体验角色扮演、推理解谜的快乐。地点为图灵大教室，时间为 2026 年 2 月 5 日晚 15 点 15 分到 17 点 15 分。</p>
+
+        <div class="event-box animate-in delay-4">
+          <div class="event-name">知春密室大逃杀</div>
+          <div class="event-detail">
+            <strong>地点：</strong>图灵大教室<br>
+            <strong>时间：</strong>2026 年 2 月 5 日 15:15–17:15<br>
+            <span style="color: var(--accent);">角色扮演 · 推理解谜 · 沉浸体验</span>
+          </div>
+        </div>
+
+        <p class="animate-in delay-4">在最后，我再次代表知春全体首届预备研究员，诚挚地邀请蒋工参加！如果确认参加，请您在白色 A4 纸上手写「确认」并扫描为 PDF，发送至我的飞书邮箱。</p>
+        <p class="animate-in delay-4">此致。</p>
+      </div>
+
+      <footer class="closing animate-in delay-5">
+        <p>您亲爱的学生</p>
+        <p class="signature">赵天翼 <span class="seal">敬</span></p>
+      </footer>
+    </article>
+  </div>
+</body>
+</html>
